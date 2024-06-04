@@ -10,38 +10,52 @@ header {
     color: white;
     padding: 20px;
     text-align: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 section {
     padding: 50px;
     text-align: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #intro {
     background: #f4f4f4;
 }
 
-#gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    background: #e2e2e2;
-}
-
-.gallery-item {
-    margin: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    overflow: hidden;
-    transition: transform 0.2s;
-}
-
-.gallery-item img {
+.portfolio-container {
     width: 100%;
-    height: auto;
 }
 
-.gallery-item:hover {
+.portfolio-project {
+    width: 100%;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.portfolio-project img {
+    max-width: 80%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.portfolio-project:hover {
     transform: scale(1.05);
 }
 
