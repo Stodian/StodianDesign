@@ -25,7 +25,7 @@ function init() {
     // Load 3D room model
     const loader = new THREE.GLTFLoader();
     loader.load(
-        'path/to/your/room_model.gltf', // Replace with the path to your 3D model
+        'blender.blend', // Replace with the path to your 3D model
         function (gltf) {
             scene.add(gltf.scene);
         },
