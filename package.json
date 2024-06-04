@@ -1,0 +1,24 @@
+{
+  "name": "stodiandesign",
+  "version": "1.0.0",
+  "description": "Testimonials",
+  "main": "scripts.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Stodian/StodianDesign.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Stodian/StodianDesign/issues"
+  },
+  "homepage": "https://github.com/Stodian/StodianDesign#readme",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

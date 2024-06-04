@@ -25,13 +25,14 @@ function init() {
     // Load 3D room model
     const loader = new THREE.GLTFLoader();
     loader.load(
-        'blender.blend', // Replace with the path to your 3D model
+        'room_model.gltf', // Ensure this path is correct relative to your server root
         function (gltf) {
             scene.add(gltf.scene);
+            console.log("Model loaded successfully");
         },
         undefined,
         function (error) {
-            console.error(error);
+            console.error('An error happened', error);
         }
     );
 
