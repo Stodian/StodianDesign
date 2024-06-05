@@ -25,7 +25,7 @@ function init() {
     // Load 3D room model
     const loader = new THREE.GLTFLoader();
     loader.load(
-        'https://github.com/Stodian/StodianDesign/blob/main/public/test.gltf', // Ensure this path is correct relative to your server root
+        'https://raw.githubusercontent.com/Stodian/StodianDesign/main/public/test.gltf', // Ensure this path is correct relative to your server root
         function (gltf) {
             scene.add(gltf.scene);
             console.log("Model loaded successfully");
