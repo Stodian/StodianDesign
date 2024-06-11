@@ -8,29 +8,31 @@
         body {
             margin: 0;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
         }
         #viewer {
-            width: 100vw;
-            height: 100vh;
+            flex: 1;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
         }
     </style>
 </head>
 <body>
     <div id="viewer"></div>
 
-    <!-- Include Three.js -->
+    <footer>
+        <p>&copy; 2024 Your Company. All rights reserved.</p>
+    </footer>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <!-- Include GLTFLoader for loading 3D models -->
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
-    <!-- Include PointerLockControls for first-person controls -->
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/PointerLockControls.js"></script>
     <script src="scripts.js"></script>
 </body>
-
-<footer>
-
-
-</footer>
-
-
 </html>
