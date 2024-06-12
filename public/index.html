@@ -3,26 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ethan Reid</title>
+    <title>My Portfolio</title>
     <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
         }
         header {
             background-color: #333;
             color: white;
             padding: 20px;
             text-align: center;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
         }
         nav {
             display: flex;
             justify-content: center;
             background-color: #444;
             padding: 10px;
+            position: fixed;
+            width: 100%;
+            top: 60px; /* Adjust based on header height */
+            z-index: 1000;
         }
         nav a {
             color: white;
@@ -33,18 +37,42 @@
             background-color: #555;
         }
         .container {
-            flex: 1;
+            margin-top: 120px; /* Adjust based on header and nav height */
             padding: 20px;
         }
+        .section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
         .project {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .project .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .project .floorplan, .project .visualization {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             border: 1px solid #ddd;
             border-radius: 5px;
-            margin: 10px 0;
-            padding: 10px;
+            margin: 10px;
             background-color: #f9f9f9;
-        }
-        .project h3 {
-            margin-top: 0;
+            width: 80%;
+            max-width: 800px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
         footer {
             background-color: #333;
@@ -56,7 +84,7 @@
 </head>
 <body>
     <header>
-        <h1>Ethan Reid</h1>
+        <h1>My Portfolio</h1>
     </header>
     <nav>
         <a href="#about">About</a>
@@ -64,24 +92,45 @@
         <a href="#contact">Contact</a>
     </nav>
     <div class="container" id="about">
-        <h2>About Me</h2>
-        <p>Hello! I'm a Building Services Design Engineer Apprentice. I specialize in designing efficient, sustainable building services and I'm currently working on my final project report.</p>
+        <div class="section">
+            <h2>About Me</h2>
+            <p>Hello! I'm a Building Services Design Engineer Apprentice. I specialize in designing efficient, sustainable building services and I'm currently working on my final project report.</p>
+        </div>
     </div>
     <div class="container" id="projects">
-        <h2>Projects</h2>
-        <div class="project">
-            <h3>Project 1</h3>
-            <p>Description of project 1.</p>
+        <div class="section project" id="project1">
+            <h2>Project 1</h2>
+            <div class="content">
+                <div class="floorplan">
+                    <p>Floorplan Design</p>
+                    <!-- Add floorplan image or content here -->
+                </div>
+                <div class="visualization">
+                    <p>Main Visualization</p>
+                    <!-- Add main visualization image or content here -->
+                </div>
+            </div>
         </div>
-        <div class="project">
-            <h3>Project 2</h3>
-            <p>Description of project 2.</p>
+        <div class="section project" id="project2">
+            <h2>Project 2</h2>
+            <div class="content">
+                <div class="floorplan">
+                    <p>Floorplan Design</p>
+                    <!-- Add floorplan image or content here -->
+                </div>
+                <div class="visualization">
+                    <p>Main Visualization</p>
+                    <!-- Add main visualization image or content here -->
+                </div>
+            </div>
         </div>
         <!-- Add more projects as needed -->
     </div>
     <div class="container" id="contact">
-        <h2>Contact Me</h2>
-        <p>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
+        <div class="section">
+            <h2>Contact Me</h2>
+            <p>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
+        </div>
     </div>
     <footer>
         <p>&copy; 2024 Your Name. All rights reserved.</p>
