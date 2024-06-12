@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Stodian</title>
     <style>
         body {
             margin: 0;
@@ -54,7 +54,7 @@
             padding: 20px;
             box-sizing: border-box;
         }
-        .project .visualization, .project .floorplan {
+        .project .visualization, .project .floorplan, .project .code-example {
             flex: 2;
             display: flex;
             justify-content: center;
@@ -63,7 +63,7 @@
             background-color: #f9f9f9;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
-        .project img {
+        .project img, .project pre {
             max-width: 100%;
             max-height: 100%;
         }
@@ -96,6 +96,24 @@
             max-width: 800px;
             margin-bottom: 20px;
         }
+        .code {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background-color: #f9f9f9;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .code h2 {
+            margin-bottom: 20px;
+        }
+        .code p {
+            max-width: 800px;
+            margin-bottom: 20px;
+        }
         footer {
             background-color: #333;
             color: white;
@@ -109,6 +127,7 @@
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#charity">Charity</a>
+        <a href="#code">Code</a>
     </nav>
     <div class="container" id="about">
         <div class="section">
@@ -150,6 +169,45 @@
             <p>[List your charity work and involvement]</p>
         </div>
     </div>
+    <div class="container" id="code">
+        <div class="code">
+            <h2>Code Projects</h2>
+            <p>Here are some of the coding projects I've worked on. These projects demonstrate my skills in various programming languages and frameworks:</p>
+            <div class="section project" id="code1">
+                <div class="code-example">
+                    <pre>
+// Example code snippet
+function greet() {
+    console.log("Hello, world!");
+}
+greet();
+                    </pre>
+                </div>
+                <div class="description">
+                    <h3>Code Project 1</h3>
+                    <p>Description of code project 1. This section will contain details about the project's functionality, technologies used, and outcomes.</p>
+                </div>
+            </div>
+            <div class="section project" id="code2">
+                <div class="code-example">
+                    <pre>
+// Another example code snippet
+let count = 0;
+function increment() {
+    count++;
+    console.log(count);
+}
+increment();
+                    </pre>
+                </div>
+                <div class="description">
+                    <h3>Code Project 2</h3>
+                    <p>Description of code project 2. This section will contain details about the project's functionality, technologies used, and outcomes.</p>
+                </div>
+            </div>
+            <!-- Add more code projects as needed -->
+        </div>
+    </div>
     <footer>
         <p>&copy; 2024 Your Name. All rights reserved.</p>
     </footer>
@@ -178,7 +236,7 @@
                 stagger: 0.3,
                 ease: "power1.out"
             });
-            gsap.from(".project img", {
+            gsap.from(".project img, .code-example pre", {
                 scrollTrigger: {
                     trigger: ".project",
                     start: "top 80%",
