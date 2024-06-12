@@ -10,7 +10,11 @@
             font-family: Arial, sans-serif;
             display: flex;
             flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
             overflow-x: hidden;
+            background-color: #f4f4f4;
         }
         nav {
             background-color: #333;
@@ -33,27 +37,43 @@
         }
         .container {
             padding-top: 80px; /* Adjust based on nav height */
-            padding: 20px;
-            box-sizing: border-box;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .button-container a {
+            background-color: #333;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .button-container a:hover {
+            background-color: #555;
         }
     </style>
 </head>
 <body>
     <nav>
-        <a href="revit.html">Revit</a>
-        <a href="cad.html">CAD</a>
-        <a href="projects.html">Projects</a>
-        <a href="charity.html">Charity</a>
+        <a href="../pages/revit.html">Revit</a>
+        <a href="../pages/cad.html">CAD</a>
+        <a href="../pages/projects.html">Projects</a>
+        <a href="../pages/charity.html">Charity</a>
     </nav>
     <div class="container">
         <h1>Welcome to Stodian</h1>
         <p>Select a section to explore:</p>
-        <ul>
-            <li><a href="revit.html">Revit</a></li>
-            <li><a href="cad.html">CAD</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="charity.html">Charity</a></li>
-        </ul>
+        <div class="button-container">
+            <a href="revit.html">Revit Code</a>
+            <a href="cad.html">CAD Code</a>
+        </div>
     </div>
 </body>
 </html>
