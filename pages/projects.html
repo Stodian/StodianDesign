@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+        nav {
+            background-color: #333;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        nav a {
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #555;
+        }
+        .container {
+            padding-top: 80px; /* Adjust based on nav height */
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .project {
+            height: 100vh;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .project .visualization, .project .floorplan {
+            flex: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px;
+            background-color: #f9f9f9;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .project img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        .project .description {
+            flex: 1;
+            padding: 20px;
+            background-color: #f0f0f0;
+            margin: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="revit.html">Revit</a>
+        <a href="cad.html">CAD</a>
+        <a href="projects.html">Projects</a>
+        <a href="charity.html">Charity</a>
+    </nav>
+    <div class="container" id="projects">
+        <div class="section project" id="project1">
+            <div class="visualization">
+                <img src="https://via.placeholder.com/800x600" alt="Main Visualization">
+            </div>
+            <div class="floorplan">
+                <img src="https://via.placeholder.com/800x600" alt="Floorplan Design">
+            </div>
+            <div class="description">
+                <h3>Project 1</h3>
+                <p>Description of project 1. This section will contain details about the project's design, goals, and achievements.</p>
+            </div>
+        </div>
+        <div class="section project" id="project2">
+            <div class="visualization">
+                <img src="https://via.placeholder.com/800x600" alt="Main Visualization">
+            </div>
+            <div class="floorplan">
+                <img src="https://via.placeholder.com/800x600" alt="Floorplan Design">
+            </div>
+            <div class="description">
+                <h3>Project 2</h3>
+                <p>Description of project 2. This section will contain details about the project's design, goals, and achievements.</p>
+            </div>
+        </div>
+        <!-- Add more projects as needed -->
+    </div>
+    <footer>
+        <p>&copy; 2024 Your Name. All rights reserved.</p>
+    </footer>
+</body>
+</html>

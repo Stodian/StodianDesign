@@ -1,2 +1,0 @@
-# StodianDesign
-Testimonials

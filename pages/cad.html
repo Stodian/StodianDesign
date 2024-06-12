@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAD Code Solutions</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+        nav {
+            background-color: #333;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        nav a {
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #555;
+        }
+        .container {
+            padding-top: 80px; /* Adjust based on nav height */
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .code {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background-color: #f9f9f9;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .code h2 {
+            margin-bottom: 20px;
+        }
+        .code p {
+            max-width: 800px;
+            margin-bottom: 20px;
+        }
+        .code .code-example {
+            width: 80%;
+            background-color: #f0f0f0;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 20px;
+            text-align: left;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="revit.html">Revit</a>
+        <a href="cad.html">CAD</a>
+        <a href="projects.html">Projects</a>
+        <a href="charity.html">Charity</a>
+    </nav>
+    <div class="container" id="cad">
+        <div class="code">
+            <h2>CAD Code Solutions</h2>
+            <p>Here, I offer free CAD code snippets to help solve common problems. Feel free to use and adapt these in your own projects:</p>
+            <div class="code-example">
+                <h3>Code Example 1: Greeting Function</h3>
+                <pre>
+// Example code snippet for CAD
+function greet() {
+    console.log("Hello, CAD world!");
+}
+greet();
+                </pre>
+                <p>This snippet demonstrates a simple greeting function in CAD's scripting environment.</p>
+            </div>
+            <div class="code-example">
+                <h3>Code Example 2: Increment Function</h3>
+                <pre>
+// Another example code snippet for CAD
+let count = 0;
+function increment() {
+    count++;
+    console.log(count);
+}
+increment();
+                </pre>
+                <p>This snippet shows a basic increment function in CAD's scripting environment.</p>
+            </div>
+            <!-- Add more CAD code examples as needed -->
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Your Name. All rights reserved.</p>
+    </footer>
+</body>
+</html>
