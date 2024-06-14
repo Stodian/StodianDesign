@@ -86,11 +86,42 @@
             <div class="code-example">
                 <h3>Code Example 1: Greeting Function</h3>
                 <pre>
-// Example code snippet for CAD
-function greet() {
-    console.log("Hello, CAD world!");
-}
-greet();
+                    from pyautocad import Autocad, APoint
+                    import os
+                    
+                    # Define the directory containing the AutoCAD files
+                    dwg_directory = "path/to/your/dwg/files"
+                    
+                    # Initialize AutoCAD
+                    acad = Autocad(create_if_not_exists=True)
+                    print(f"AutoCAD running: {acad.app}")
+                    
+                    # Function to change layer of all objects to 'Layer1'
+                    def change_layer(doc, new_layer):
+                        for obj in doc.ModelSpace:
+                            obj.Layer = new_layer
+                    
+                    # Iterate through all DWG files in the specified directory
+                    for filename in os.listdir(dwg_directory):
+                        if filename.endswith(".dwg"):
+                            file_path = os.path.join(dwg_directory, filename)
+                            print(f"Processing file: {file_path}")
+                    
+                            # Open the DWG file
+                            acad.app.Documents.Open(file_path)
+                    
+                            # Get the active document
+                            doc = acad.app.ActiveDocument
+                    
+                            # Apply the layer change function
+                            change_layer(doc, "Layer1")
+                    
+                            # Save and close the document
+                            doc.Save()
+                            doc.Close()
+                    
+                    print("Batch processing completed.")
+                    
                 </pre>
                 <p>This snippet demonstrates a simple greeting function in CAD's scripting environment.</p>
             </div>
