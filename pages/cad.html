@@ -128,13 +128,54 @@
             <div class="code-example">
                 <h3>Code Example 2: Increment Function</h3>
                 <pre>
-// Another example code snippet for CAD
-let count = 0;
-function increment() {
-    count++;
-    console.log(count);
-}
-increment();
+                    from pyautocad import Autocad, APoint
+                    import os
+                    
+                    # Define the directory containing the AutoCAD files
+                    dwg_directory = "path/to/your/dwg/files"
+                    
+                    # Define the layer renaming convention
+                    # Example: {"OldLayerName1": "NewLayerName1", "OldLayerName2": "NewLayerName2"}
+                    layer_rename_mapping = {
+                        "OldLayer1": "NewLayer1",
+                        "OldLayer2": "NewLayer2",
+                        # Add more mappings as needed
+                    }
+                    
+                    # Initialize AutoCAD
+                    acad = Autocad(create_if_not_exists=True)
+                    print(f"AutoCAD running: {acad.app}")
+                    
+                    # Function to rename layers based on the given mapping
+                    def rename_layers(doc, rename_mapping):
+                        for layer in doc.Layers:
+                            old_name = layer.Name
+                            if old_name in rename_mapping:
+                                new_name = rename_mapping[old_name]
+                                print(f"Renaming layer '{old_name}' to '{new_name}'")
+                                layer.Name = new_name
+                    
+                    # Iterate through all DWG files in the specified directory
+                    for filename in os.listdir(dwg_directory):
+                        if filename.endswith(".dwg"):
+                            file_path = os.path.join(dwg_directory, filename)
+                            print(f"Processing file: {file_path}")
+                    
+                            # Open the DWG file
+                            acad.app.Documents.Open(file_path)
+                    
+                            # Get the active document
+                            doc = acad.app.ActiveDocument
+                    
+                            # Apply the layer renaming function
+                            rename_layers(doc, layer_rename_mapping)
+                    
+                            # Save and close the document
+                            doc.Save()
+                            doc.Close()
+                    
+                    print("Batch renaming of layers completed.")
+                    
                 </pre>
                 <p>This snippet shows a basic increment function in CAD's scripting environment.</p>
             </div>
