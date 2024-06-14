@@ -86,24 +86,82 @@
             <div class="code-example">
                 <h3>Code Example 1: Greeting Function</h3>
                 <pre>
-// Example code snippet for Revit
-function greet() {
-    console.log("Hello, Revit world!");
-}
-greet();
+                    import clr
+                    clr.AddReference('RevitAPI')
+                    clr.AddReference('RevitServices')
+                    clr.AddReference('RevitNodes')
+                    
+                    from RevitServices.Persistence import DocumentManager
+                    from RevitServices.Transactions import TransactionManager
+                    from Autodesk.Revit.DB import *
+                    from Revit import Elements
+                    
+                    # The inputs to this node will be stored as a list in the IN variables.
+                    doc = DocumentManager.Instance.CurrentDBDocument
+                    uiapp = DocumentManager.Instance.CurrentUIApplication
+                    app = uiapp.Application
+                    uidoc = uiapp.ActiveUIDocument
+                    
+                    # Input variables
+                    sheet_name = IN[0]  # Sheet name as string
+                    views_to_place = IN[1]  # List of view objects to place on sheet
+                    
+                    # Start a transaction
+                    TransactionManager.Instance.EnsureInTransaction(doc)
+                    
+                    # Create a new sheet
+                    title_block_id = ElementId(IN[2])  # Input title block family type id
+                    new_sheet = ViewSheet.Create(doc, title_block_id)
+                    new_sheet.Name = sheet_name
+                    
+                    # Place each view on the sheet
+                    for view in views_to_place:
+                        view_id = view.Id
+                        viewport_type_id = ElementId(IN[3])  # Input viewport type id
+                        viewport = Viewport.Create(doc, new_sheet.Id, view_id, XYZ(1, 1, 0))  # Example location
+                    
+                        # Set the viewport type
+                        viewport.ChangeTypeId(viewport_type_id)
+                    
+                    TransactionManager.Instance.TransactionTaskDone()
+                    
+                    # Output the created sheet
+                    OUT = new_sheet
+                    
                 </pre>
                 <p>This snippet demonstrates a simple greeting function in Revit's scripting environment.</p>
             </div>
             <div class="code-example">
                 <h3>Code Example 2: Increment Function</h3>
                 <pre>
-// Another example code snippet for Revit
-let count = 0;
-function increment() {
-    count++;
-    console.log(count);
-}
-increment();
+                    import clr
+                    clr.AddReference('RevitAPI')
+                    clr.AddReference('RevitServices')
+                    
+                    from RevitServices.Persistence import DocumentManager
+                    from RevitServices.Transactions import TransactionManager
+                    from Autodesk.Revit.DB import *
+                    
+                    # The inputs to this node will be stored as a list in the IN variables.
+                    doc = DocumentManager.Instance.CurrentDBDocument
+                    
+                    # Input variables
+                    level_name = IN[0]  # Level name as string
+                    level_elevation = IN[1]  # Level elevation as float (in feet)
+                    
+                    # Start a transaction
+                    TransactionManager.Instance.EnsureInTransaction(doc)
+                    
+                    # Create a new level
+                    new_level = Level.Create(doc, level_elevation)
+                    new_level.Name = level_name
+                    
+                    # Commit the transaction
+                    TransactionManager.Instance.TransactionTaskDone()
+                    
+                    # Output the created level
+                    OUT = new_level
+                    
                 </pre>
                 <p>This snippet shows a basic increment function in Revit's scripting environment.</p>
             </div>
